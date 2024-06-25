@@ -1,0 +1,115 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(255, 255, 255);
+}
+
+.divHeader {
+  margin: 2rem auto;
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+  align-items: top;
+  border: 1px black solid;
+}
+
+.descriptionHeader {
+  width: 70%;
+  /* border: 2px red solid; */
+  margin: 3rem 1rem;
+}
+
+.picture {
+  width: 50%;
+}
+
+.picture img {
+  width: 100%;
+  /* height: auto; */
+}
+
+@media (max-width: 550px) {
+  .divHeader {
+    margin: 0 0;
+    width: 100%;
+    flex-direction: column;
+    border: 0;
+  }
+
+  .divHeader picture {
+    width: 100%;
+  }
+}
+
+@media (min-width: 551px) and (max-width: 940px) {
+  .divHeader picture {
+    transform: translate(-1.5rem, -3rem);
+    width: 70%;
+    margin-top: 1rem;
+  }
+  .divHeader .descriptionHeader {
+    width: 70%;
+    margin: 1rem 0;
+  }
+
+  .divHeader {
+    justify-content: center;
+    width: 80%;
+
+    margin-top: 5rem;
+  }
+}
+
+/* work section */
+.containerWork {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* Space between cards */
+  justify-content: center;
+}
+.containerWork::before {
+  content: "My Work";
+  font-size: 2em;
+  font-weight: bold;
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+.card {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 1rem;
+  max-width: 200px; /* Width of each card */
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+}
+.card:hover {
+  width: 250px;
+  font-size: 1.2rem;
+  background-color: #ccc;
+  cursor: pointer;
+}
+
+.card h1 {
+  font-size: 1.2em;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 2rem;
+}
+
+.card p {
+  padding: 2rem;
+  font-size: 1em;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

@@ -9,23 +9,25 @@ module.exports = {
     clean: true,
   },
   plugins: [
-  new HtmlWebpackPlugin({
-    template: './index.html',
-    filename: 'index.html'
-  })],
-  resolve: {
-    fallback: {
-      "path": false,
-      "util": false,
-      "url": false,
-      "https": false,
-      "http": false,
-      "vm": false,
-      "zlib": false,
-      "buffer": false,
-      "stream": false,
-      "crypto": false
-    }
-  },
+    new HtmlWebpackPlugin({
+      template: './index.html',
+      filename: 'index.html'
+    })
+  ],
   mode: 'development',
+  module: {
+    rules: [
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
+      },
+      {
+        test: /\.(png|jpe?g|gif|svg)$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: 'images/[name][ext]',
+        },
+      },
+    ],
+  },
 };
