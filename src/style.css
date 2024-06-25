@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(135, 219, 240);
 }
 
 .divHeader {
@@ -28,44 +28,16 @@ body {
   /* height: auto; */
 }
 
-@media (max-width: 550px) {
-  .divHeader {
-    margin: 0 0;
-    width: 100%;
-    flex-direction: column;
-    border: 0;
-  }
-
-  .divHeader picture {
-    width: 100%;
-  }
-}
-
-@media (min-width: 551px) and (max-width: 940px) {
-  .divHeader picture {
-    transform: translate(-1.5rem, -3rem);
-    width: 70%;
-    margin-top: 1rem;
-  }
-  .divHeader .descriptionHeader {
-    width: 70%;
-    margin: 1rem 0;
-  }
-
-  .divHeader {
-    justify-content: center;
-    width: 80%;
-
-    margin-top: 5rem;
-  }
-}
-
 /* work section */
 .containerWork {
   display: flex;
+  margin: 0 auto;
+  width: 80%;
+  padding: 3rem;
   flex-wrap: wrap;
-  gap: 10px; /* Space between cards */
+  gap: 5rem; /* Space between cards */
   justify-content: center;
+  background-color: rgb(255, 255, 255);
 }
 .containerWork::before {
   content: "My Work";
@@ -81,7 +53,7 @@ body {
   border: 1px solid #ccc;
   border-radius: 4px;
   padding: 1rem;
-  max-width: 200px; /* Width of each card */
+  max-width: 250px; /* Width of each card */
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
@@ -90,8 +62,8 @@ body {
   margin-bottom: 3rem;
 }
 .card:hover {
-  width: 250px;
-  font-size: 1.2rem;
+  width: 220px;
+  font-size: 1.1rem;
   background-color: #ccc;
   cursor: pointer;
 }
@@ -112,4 +84,81 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+/* contact */
+
+.contactContainer {
+  display: flex;
+  width: 80%;
+  justify-content: center;
+  gap: 2rem;
+  align-items: center;
+  margin: 3rem auto;
+}
+
+.descriptionContact {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  padding: 1rem;
+  flex: 1; /* Ensures equal width with the picture */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.picture3 {
+  flex: 1; /* Ensures equal width with the text */
+  max-width: 100%;
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.picture3 img {
+  max-width: 100%;
+  height: auto;
+}
+
+.svgImg {
+  max-width: 3rem;
+}
+
+@media (max-width: 600px) {
+  .divHeader {
+    width: 90%;
+    flex-direction: column;
+    border: 0;
+  }
+
+  .divHeader picture {
+    width: 100%;
+  }
+
+  .contactContainer {
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 940px) {
+  .divHeader picture {
+    transform: translate(-1.5rem, -3rem);
+    width: 70%;
+    margin-top: 1rem;
+  }
+  .divHeader .descriptionHeader {
+    width: 70%;
+    margin: 1rem 0;
+  }
+
+  .divHeader {
+    justify-content: center;
+    width: 80%;
+
+    margin-top: 5rem;
+  }
+  .descriptionContact {
+    max-width: 50%;
+    font-size: 1rem;
+  }
+
+  .picture3 {
+    width: 50%;
+  }
 }

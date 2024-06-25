@@ -1,5 +1,5 @@
 import "./style.css"
-
+import linkedinSVg from '../images/linkedin.svg'
 
 const container = document.querySelector('.container')
 
@@ -47,6 +47,15 @@ container.appendChild(divHeader)
 
 
 // Create the container for the cards
+const getRandomColor = () => {
+        const letters = '0123456789ABCDEF';
+        let color = '#';
+        for (let i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+
 const containerWork = document.createElement('div');
 containerWork.classList.add('containerWork');
 const createCard = (projectName) => {
@@ -54,6 +63,7 @@ const createCard = (projectName) => {
         card.classList.add('card');
         
         const cardDiv1 = document.createElement('div');
+        cardDiv1.style.backgroundColor = getRandomColor()
         const cardDiv2 = document.createElement('div');
         
         const cardH1 = document.createElement('h1');
@@ -79,3 +89,68 @@ const createCard = (projectName) => {
     }
 
     container.appendChild(containerWork);
+
+
+// contact me area
+const contactContainer = document.createElement('div');
+contactContainer.classList.add('contactContainer');
+
+// Create the info div
+const infoDiv = document.createElement('div');
+infoDiv.classList.add("descriptionContact");
+
+
+const headerC = document.createElement('h1')
+headerC.textContent = 'Contact me!'
+infoDiv.appendChild(headerC)
+// Add email, number, random street, and a message of greetings to infoDiv
+const email = document.createElement('p');
+email.textContent = 'Email: example@example.com';
+infoDiv.appendChild(email);
+
+const phoneNumber = document.createElement('p');
+phoneNumber.textContent = 'Phone: 123-456-7890';
+infoDiv.appendChild(phoneNumber);
+
+const address = document.createElement('p');
+address.textContent = 'Address: 123 Random Street';
+infoDiv.appendChild(address);
+
+const greetingMessage = document.createElement('p');
+greetingMessage.textContent = 'Greetings!';
+infoDiv.appendChild(greetingMessage);
+
+// Create the picture element
+const pictureContact = document.createElement('picture');
+pictureContact.classList.add('picture3');
+
+const sourceSmall2 = document.createElement('source');
+sourceSmall2.setAttribute('media', '(max-width: 400px)');
+sourceSmall2.setAttribute('srcset', '../images/small.jpg');
+
+const sourceLarge2 = document.createElement('source');
+sourceLarge2.setAttribute('media', '(min-width: 401px)');
+sourceLarge2.setAttribute('srcset', '../images/big.jpg');
+
+const img2 = document.createElement('img');
+img2.setAttribute('src', '../images/big.jpg');
+img2.setAttribute('alt', 'Description of the photo');
+
+pictureContact.appendChild(sourceSmall2);
+pictureContact.appendChild(sourceLarge2);
+pictureContact.appendChild(img2);
+
+// Append infoDiv and pictureContact to contactContainer
+contactContainer.appendChild(infoDiv);
+contactContainer.appendChild(pictureContact);
+
+
+//svg
+const svgImg = document.createElement('img');
+svgImg.classList.add('svgImg')
+svgImg.setAttribute('src', linkedinSVg);
+infoDiv.appendChild(svgImg);
+
+
+// Append contactContainer to the main container
+container.appendChild(contactContainer);
